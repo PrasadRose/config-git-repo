@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: transactionorder-api
+
+  mongodb:
+    uri: mongodb://localhost:27017
+    database: ZellleTransactionOrder
+logging:
+  level:
+    com:
+      transactionorder: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg%n"
+  file:
+    name: logs/transactionorder.log
+    path: ./logs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+server:
+  port: 9090
